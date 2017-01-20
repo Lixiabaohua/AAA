@@ -1,0 +1,40 @@
+%real data analysis
+Notes for data set: 8 column
+C1: response, hourly values of the logarithm of the concentration of NO2(particles)
+C2: logarithm of the number of cars per hour
+C3:  temperature 2 meters above ground
+C4:  wind spped
+C5:  temperature differencebetween 25 and 2 meters above ground
+C6:  wind direction
+C7: U, hours of day
+C8:   day number
+
+resort this data set into a time series and 
+select covariates: wind speed, log car numbers, and difference of temperature
+covariates are transformed on [0,1]
+
+Script:
+NO2.m: main procedure generate Figure 4 and Figure 5 of this paper
+
+Function:
+mysort.m: resort orginal data in time order
+rspline1.m, rspline2.m: generate Bspline matrix and its the first  derivative matrix
+deriveSCAD.m: compute the value of SCAD penality function
+StepIest.m: consstruct initial estimation of Step I
+Spest.m: three-step spline estimators for full model with selected three covariates
+myknot.m: select optimal knots in varying-coefficient additive function under specified order of
+                  B-spline and gruops
+myknot_vca.m: select  optimal knots  among choice for groups and order of B-spline in initial estimation
+tune_StageI.m: choose optimal tuning parameter in Stage I of model identification
+tune_StageII.m: choose optimal tuning parameter in Stage II of model identification
+optimtune.m: choose optimal tuning parameter in model identification
+add_est: estimating additive model
+cofi_add.m: compute bootstrap confidence interval for constant term under AM
+plot_RM.m: plot curves under reduced model
+plotpre.m:  compare  of one-step ahead prediction
+RM.m: reduced model: alp0 is time variant and other varying-coefficent functions
+                    are constants
+RM_test.m: return one-step  prediction and prediction error
+pre_RM.m:  one-step ahead forecasting under RM
+
+

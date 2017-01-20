@@ -1,0 +1,32 @@
+%simulation for Example 1 (20 files)
+
+There are 4 data sets: 
+Dat1,  Dat2 and Dat3 are data for Table 1 and Table 2,
+My1, My2 and My3 are respective monte carlo replication of response 
+Dat4 My4, std4 are used to plot Figure 1 and Figure2
+
+Script:
+sim1.m: main procedure for simulation 1(Table 1 and Figure 1)
+
+function:
+rspline.m: generate B-spline matrix
+Spest.m: Spline estimation for component functions of varying-coefficient additive function
+Oracle_est.m: oracle estimation of varying-coefficient functions and additive functions
+Mis_est.m: misspecified estimation of varying-coefficient model and additive model
+myknot.m: select optimal knots in varying-coefficient additive function under specified order of
+                  B-spline and gruops
+myknot_vca.m: select  optimal knots  among choice for groups and order of B-spline in initial estimation
+Msecomp.m: comparison of mse of estimation for three different model and oracle estimation
+SpestP.m: corresponding spline estimation of VCA to prection 
+Sp_test.m: corresponding to prection
+mis_Pest.m:  spline estimation of misspecified model corresponding to prection
+mis_test.m:  spline estimation of misspecified model corresponding to prection 
+mse_Pre.m: mse in prediction
+bifun.m: generate true function value at given grid points
+pred_est.m: estimate component functions at given grid points
+plotband.m: plot Figure 1 in paper
+plotsurf.m:   plot Figure 2 in paper
+
+results: (1) variable "MseMat" print Table 1
+            (2) variable "PreMat" print Table 2
+            (3) variable "paraMat" print optimal parameter in Table 1 

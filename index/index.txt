@@ -1,0 +1,31 @@
+%real data analysis: NASDAQ Composite index spanning from 2000/01 to 2014/12. 
+Notes for data set: 
+response: high-low
+covariates: x1: high-low at previous day
+                 x2: daily return at previous day
+covariates are centered
+
+Script:
+index.m: main procedure generate Figure 4 and Figure 5 of this paper
+
+Function:
+rspline1.m, rspline2.m: generate Bspline matrix and its the first  derivative matrix
+deriveSCAD.m: compute the value of SCAD penality function
+StepIest.m: construct initial estimation of Step I
+Spest.m: three-step spline estimators for full model with selected three covariates
+myknot.m: select optimal knots in varying-coefficient additive function under specified order of
+                  B-spline and gruops
+myknot_vca.m: select  optimal knots  among choice for groups and order of B-spline in initial estimation
+tune_StageI.m: choose optimal tuning parameter in Stage I of model identification
+tune_StageII.m: choose optimal tuning parameter in Stage II of model identification
+optimtune.m: choose optimal tuning parameter in model identification
+StepIpre.m:  initial estimation of Step I in one-step ahead forecasting
+Sp_test.m: one-step ahead forecasting under VCAM
+pred_est: estimating at given grid points under redecued model
+plotseries.m: time series plot 
+plotvca.m: plot estimation of component function under redecued model
+plotsurf.m: plot estimated surface under redecued model
+plotpre.m:  compare  of one-step ahead prediction
+
+
+
